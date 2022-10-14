@@ -1,10 +1,10 @@
 namespace _Scripts
 {
-    public class Obstacle : LaneObject
+    public class HealthKit : LaneObject
     {
         public override void OnCollisionWithPlayer(Player player)
         {
-            player.Health -= 1;
+            player.Health += 1;
         }
     }
 }
