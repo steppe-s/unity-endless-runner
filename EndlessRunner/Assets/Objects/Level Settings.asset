@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Level Settings
   m_EditorClassIdentifier: 
   lanes: 3
-  laneMargin: 0
+  laneMargin: 2
+  laneLength: 25
+  obstacleInterval: 3
+  firstObstacleDistance: 0
+  baseObstacleSpeed: 10
+  obstacle: {fileID: 5020024116267457827, guid: 9d9c0f80592387b4990c01a9a180f73d, type: 3}
