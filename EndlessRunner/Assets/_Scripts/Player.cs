@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _Scripts
 {
@@ -14,6 +15,8 @@ namespace _Scripts
         private Vector3 _origin;
         private int _position;
 
+        [SerializeField] private UnityEvent<float> onHealthChange;
+        
         private int Position
         {
             get => _position;
@@ -26,6 +29,7 @@ namespace _Scripts
             set
             {
                 _health = value;
+                onHealthChange.Invoke(value);
                 if (_health <= 0) Die();
             }
         }
@@ -45,7 +49,7 @@ namespace _Scripts
 
         private void Awake()
         {
-            _health = baseHealth;
+            Health = baseHealth;
         }
 
         private void Start()
