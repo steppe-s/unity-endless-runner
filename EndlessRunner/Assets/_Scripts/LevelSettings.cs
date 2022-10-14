@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace _Scripts
@@ -10,8 +11,10 @@ namespace _Scripts
         [SerializeField] private float laneLength;
         [SerializeField] private float obstacleInterval;
         [SerializeField] private float baseObstacleSpeed;
+        [SerializeField] private float obstacleSpeedIncreaseOverSeconds;
+        [SerializeField] private GameObject healthKit;
         [SerializeField] private GameObject obstacle;
-
+        [SerializeField, Range(0f, 1f)] private float healthKitChance;
         public int Lanes => lanes;
 
         public float LaneMargin => laneMargin;
@@ -22,6 +25,12 @@ namespace _Scripts
 
         public float BaseObstacleSpeed => baseObstacleSpeed;
 
+        public float ObstacleSpeedIncreaseOverSeconds => obstacleSpeedIncreaseOverSeconds;
+
+        public GameObject HealthKit => healthKit;
+
         public GameObject Obstacle => obstacle;
+
+        public float HealthKitChance => healthKitChance;
     }
 }

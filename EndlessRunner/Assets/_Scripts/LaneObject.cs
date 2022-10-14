@@ -21,7 +21,8 @@ namespace _Scripts
                 Destroy(gameObject);
                 return;
             }
-            transform.Translate(Vector3.back * (settings.BaseObstacleSpeed * Time.deltaTime));
+            var speed = settings.BaseObstacleSpeed + settings.ObstacleSpeedIncreaseOverSeconds * Time.timeSinceLevelLoad;
+            transform.position += (Vector3.back * (speed * Time.deltaTime));
         }
 
         public float DistanceFromOrigin()

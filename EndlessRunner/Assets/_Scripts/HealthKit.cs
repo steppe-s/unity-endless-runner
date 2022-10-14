@@ -5,6 +5,7 @@ namespace _Scripts
         public override void OnCollisionWithPlayer(Player player)
         {
             player.Health += 1;
+            Destroy(gameObject);
         }
     }
 }

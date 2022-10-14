@@ -13,13 +13,14 @@ namespace _Scripts
         private void Update()
         {
             if (_lastLaneObject && !(_lastLaneObject.DistanceFromOrigin() > settings.ObstacleInterval)) return;
-            // var numberOfObstaclesToSpawn = Random.Range(1, settings.Lanes - 1);
-            // for (int i = 0; i < numberOfObstaclesToSpawn; i++)
-            // {
+            var laneObject = settings.Obstacle;
+            if (Random.Range(0f,1f) < settings.HealthKitChance)
+            {
+                laneObject = settings.HealthKit;
+            }
             var lane = Random.Range(0, settings.Lanes);
-            var o = Instantiate(settings.Obstacle, transform.position + Vector3.right * (lane * settings.LaneMargin), Quaternion.identity);
-            _lastLaneObject = o.GetComponent<LaneObject>();
-            // }
+            laneObject = Instantiate(laneObject, transform.position + Vector3.right * (lane * settings.LaneMargin), Quaternion.identity);
+            _lastLaneObject = laneObject.GetComponent<LaneObject>();
         }
     }
 }
