@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace _Scripts
+namespace _Scripts.Data
 {
     [CreateAssetMenu]
     public class LevelSettings : ScriptableObject

@@ -1,8 +1,8 @@
-using System;
+using _Scripts.Data;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace _Scripts
+namespace _Scripts.Lane
 {
     public class LaneManager : MonoBehaviour
     {

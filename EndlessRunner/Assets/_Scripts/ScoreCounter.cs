@@ -1,4 +1,5 @@
 using System;
+using _Scripts.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,7 +9,9 @@ namespace _Scripts
     {
         [SerializeField] private LevelSettings settings;
         [SerializeField] private UnityEvent<float> onScoreChange;
-    
+        [SerializeField] private UnityEvent<float> onHighScoreChange;
+        [SerializeField] private HighScore highScore;
+        
         private float _distance;
 
         private float Distance
@@ -24,11 +27,15 @@ namespace _Scripts
         private void Awake()
         {
             Distance = 0;
+            onHighScoreChange.Invoke(highScore.Value);
         }
 
         private void LateUpdate()
         {
             Distance += (settings.BaseObstacleSpeed + settings.ObstacleSpeedIncreaseOverSeconds * Time.timeSinceLevelLoad) * Time.deltaTime;
+            if (!(Distance > highScore.Value)) return;
+            highScore.Value = Distance;
+            onHighScoreChange.Invoke(highScore.Value);
         }
     }
 }

@@ -1,4 +1,4 @@
-namespace _Scripts
+namespace _Scripts.Lane
 {
     public class Obstacle : LaneObject
     {

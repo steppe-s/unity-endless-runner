@@ -1,7 +1,7 @@
-using System;
+using _Scripts.Data;
 using UnityEngine;
 
-namespace _Scripts
+namespace _Scripts.Lane
 {
     public abstract class LaneObject : MonoBehaviour
     {

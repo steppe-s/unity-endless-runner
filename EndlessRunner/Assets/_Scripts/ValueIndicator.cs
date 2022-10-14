@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace _Scripts
 {
-    public class FloatIndicator : MonoBehaviour
+    public class ValueIndicator : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI text;
-        
+        [SerializeField] private string label;
         public void Change(float value)
         {
-            text.text = "" + value;
+            text.text = label + ": " + Mathf.FloorToInt(value);
         }
     }
 }

@@ -1,4 +1,6 @@
 using System;
+using _Scripts.Data;
+using _Scripts.Lane;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,7 +18,8 @@ namespace _Scripts
         private int _position;
 
         [SerializeField] private UnityEvent<float> onHealthChange;
-        
+        [SerializeField] private UnityEvent onDeath;
+
         private int Position
         {
             get => _position;
@@ -80,6 +83,7 @@ namespace _Scripts
 
         private void Die()
         {
+            onDeath.Invoke();
             Destroy(gameObject);
         }
     }
